@@ -27,12 +27,45 @@ class Dancer : public Performer {
     void dance(){cout<<getName()<<" is performing "<<getdanceStyle()<<" dance"<<endl;}
 };
 int main(){
-
-    Singer d1("Sandy",21,"Soppranno");
-    Dancer d2("Snoop",53,"Cripwalk");
-    d1.sing();
-    d2.dance();
-    
-
-    return 0;
+    string iname;
+    int iage;
+    string ivocalrange;
+    string idancestyle;
+    string occupation;
+    cout<<"Singer Or Dancer"<<endl;
+   
+while(true){
+    cin>>occupation;
+    if (occupation == "Singer" ||occupation == "singer"){
+        cout<<"Singer Details:"<<endl;
+        cout<<"input Name"<<endl;
+        cin>>iname; 
+        cout<<"input Age"<<endl;
+        cin>>iage;
+        cout<<"input Vocal Range"<<endl;
+        cin>>ivocalrange;
+        cout<<"Printing"<<endl;
+        Singer S1(iname,iage,ivocalrange);
+        S1.sing();
+        cout<<"Type exit to Terminate Program"<<endl;
+        cout<<"Singer or Dancer"<<endl;
+    }else if(occupation == "Dancer" ||occupation == "dancer"){
+        cout<<"Dancer Details:"<<endl;
+        cout<<"input Name"<<endl;
+        cin>>iname; 
+        cout<<"input Age"<<endl;
+        cin>>iage;
+        cout<<"input Dance Style"<<endl;
+        cin>>idancestyle;
+        Dancer S2(iname,iage,idancestyle);
+        S2.dance();
+        cout<<"Type exit to Terminate Program"<<endl;
+        cout<<"Singer or Dancer"<<endl;
+    }else if(occupation=="Exit"||occupation=="exit"){
+        return 0;
+    }else{
+    cout<<"invalid input Type Exit to exit"<<endl;
+    cout<<"Singer or Dancer"<<endl;
+    }
+}
 }
